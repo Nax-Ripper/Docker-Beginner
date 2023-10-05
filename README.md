@@ -74,8 +74,12 @@ This is my docker project by learning docker and container
 
 ##### To set up mongo and it network
 
-> docker run -p [host_port:container_port] -e MONGO_INITDB_ROOT_USERNAME=admin MONGO_INITDB_ROOT_PASSWORD=password --name mongodb --net mongo-network -d mongo
+```
+docker run -p [host_port:container_port] -e MONGO_INITDB_ROOT_USERNAME=admin MONGO_INITDB_ROOT_PASSWORD=password --name mongodb --net mongo-network -d mongo
+```
 
 ##### To set up mongo-express to mongo-network
 
-> docker run -p 8081:8081 -e ME_CONFIG_MONGODB_ADMINUSERNAME=admin -e ME_CONFIG_MONGODB_ADMINPASSWORD=password -e ME_CONFIG_MONGODB_SERVER=mongodb --net mongo-network --name mongo-express -d mongo-express
+```
+ docker run -p 8081:8081 -e ME_CONFIG_MONGODB_ADMINUSERNAME=admin -e ME_CONFIG_MONGODB_ADMINPASSWORD=password -e ME_CONFIG_MONGODB_SERVER=mongodb --net mongo-network --name mongo-express -d mongo-express
+```
