@@ -1,0 +1,30 @@
+
+
+version: '3'                                # Version of docker-compose
+
+services:                                   # various containers
+  mongodb:                                  # name of the service
+    image: mongo                            # Docker image name
+    ports:                                  # [host_port:container_port]
+      - "27017:27017"
+    environment:                            # environment variables    
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=password
+    volumes:
+      - mongo-data:/data/db                # path for the volume (different service has different path)
+
+
+  mongo-express:
+    image: mongo-express
+    restart: always                         #it keep restart until it finds connection
+    ports:
+      - "8081:8081"
+    environment:
+      - ME_CONFIG_MONGODB_ADMINUSERNAME=admin
+      - ME_CONFIG_MONGODB_ADMINPASSWORD=password
+      - ME_CONFIG_MONGODB_SERVER=mongodb
+
+volumes:
+  mongo-data:                               # volume name
+    driver: local                           # type of volume driver to use (local - creating volumes on the host machine's)
+
