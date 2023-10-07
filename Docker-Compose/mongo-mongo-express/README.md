@@ -6,9 +6,9 @@
  docker-compose -f docker-compose.yaml up
 ```
 
-2. To stop docker-compose
+2. To  Stop and remove containers, networks
 
 ```
- docker-compose -f docker-compose.yaml down remove containers
+ docker-compose -f docker-compose.yaml down 
 ```
 
