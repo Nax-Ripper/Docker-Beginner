@@ -4,7 +4,7 @@
 
 - docker run is entirely command line based, while docker-compose reads configuration data from a YAML file.
 
-![Alt text](image.png)
+![Alt text](./images/image.png)
 
 - When write all the containers that mention in the docker docker-compose file it will be automatically placed in a same network
 

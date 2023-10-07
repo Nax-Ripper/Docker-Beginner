@@ -2,11 +2,11 @@
 
 This is my docker project by learning docker and container
 
-![Alt text](image-3.png)
+![Alt text](/images/image-3.png)
 
 ## Concepts and terms
 
-![Alt text](image-5.png)
+![Alt text](/images/image-5.png)
 
 ### Images
 
@@ -28,7 +28,7 @@ This is my docker project by learning docker and container
 
 - **docker image ls** - To list image
 
-> ![Alt text](image-1.png)
+> ![Alt text](/images/image-1.png)
 
 - **docker ps** - To list containers
 
@@ -50,6 +50,8 @@ This is my docker project by learning docker and container
 
 - **docker stop $(docker ps -a -q)** - to stop all running container
 
+- **docker rm -f $(docker ps -a -q)** - to delete all containers
+
 > -a = show all container
 
 > -q = show only container id
@@ -62,7 +64,7 @@ This is my docker project by learning docker and container
 
 ## Container to Container communications
 
-![Alt text](image-2.png)
+![Alt text](/images/image-2.png)
 
 ### Networking in docker
 
@@ -83,3 +85,32 @@ docker run -p [host_port:container_port] -e MONGO_INITDB_ROOT_USERNAME=admin MON
 ```
  docker run -p 8081:8081 -e ME_CONFIG_MONGODB_ADMINUSERNAME=admin -e ME_CONFIG_MONGODB_ADMINPASSWORD=password -e ME_CONFIG_MONGODB_SERVER=mongodb --net mongo-network --name mongo-express -d mongo-express
 ```
+
+### Building Docker image and push
+
+```
+docker build -t [username/preferred_image_name]:[tag] .
+```
+
+```
+docker push [imaga_name]
+```
+
+- Example
+
+```
+docker build -t narendran/hey-python:0.0.1.RELEASE .
+```
+
+```
+docker push narendran/hey-python:0.0.1.RELEASE
+```
+
+### Images That pushed
+
+- <https://hub.docker.com/u/narendranrammudo>
+
+
+### Additional Resources
+
+- <https://docs.docker.com/engine/reference/run/>
